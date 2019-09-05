@@ -1,0 +1,75 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+  
+    <div class="card-body">
+            <input type="search" [(ngModel)]="searchText"  placeholder="search text goes here">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>TODO</th>
+                        <th >Description</th>
+                        <th>action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let t of todo | filter : searchText">
+                        <td>{{t.id}}</td>
+                        <td>{{t.nom}}</td>
+                        <td >{{t.desc}}</td>
+                       
+                        <td> <button type="button" data-toggle="modal" data-target="#myModal" ><i
+                                    class="fa fa-edit"  (click)="update(t)"></i></button>
+                       <button type="button"(click)="delete(t)" ><i class="fa fa-trash"></i></button></td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Update Modal</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form class="form-inline" [formGroup]="pFormUpdate" >
+                <div class="form-group">
+                  <label for="name" class="col-form-label">TODO:&nbsp;&nbsp;&nbsp;&nbsp;  </label>
+                  <input type="text" class="form-control"  formControlName="nom" placeholder="">
+                </div>
+                <br>
+                <div class="form-group">
+                  <label for="pr"  class="col-form-label">Descripion:</label>
+                  <input type="text" class="form-control"  formControlName="desc" >
+                </div>
+           
+                 
+                 
+            
+              
+          </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger"  [disabled] = "!pFormUpdate.valid" (click)="validate()">update</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>     
+  
+      </div>
+    </div>
+  </div>

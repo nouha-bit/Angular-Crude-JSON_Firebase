@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "username": "test",
+      "email": "nou@gmail.com",
+      "paswword": "123456",
+      "id": 1
+    },
+    {
+      "username": "nouha2",
+      "email": "n@gmail.com",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "username": "salah",
+      "email": "salah@yahoo.fr",
+      "password": "123456",
+      "id": 3
+    }
+  ],
+  "toDo": [
+    {
+      "nom": "angular8",
+      "desc": "five Points",
+      "id": "x7YZbw6"
+    },
+    {
+      "nom": "bootstrap",
+      "desc": "5points lac2",
+      "id": "lSuXdmX"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<form  [formGroup]="pForm" class="splash-container">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="mb-1">Registrations Form</h3>
+            <p>Please enter your user information.</p>
+        </div>
+        <div class="card-body">
+            <div class="form-group" >
+                <input class="form-control form-control-lg" type="text"  formControlName="username" placeholder="Username" >
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-lg" type="email" formControlName="email" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-lg"  type="password" formControlName="password" placeholder="Password">
+            </div>
+            <div class="form-group pt-2">
+                <button class="btn btn-block btn-warning" type="button"[routerLink]="['/login']" (click)="add()">Register My Account</button>
+            </div>
+           
+        
+        </div>
+        <div class="card-footer bg-white">
+            <p>Already member? <a href="#" class="text-secondary" [routerLink]="['/login']" >Login Here.</a></p>
+        </div>
+    </div>
+</form>
+
